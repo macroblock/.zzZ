@@ -1,0 +1,4 @@
+partial xkb_keycodes "dexp" {
+    <XXXX> = 102;
+    <YYYY> = 100;
+};

@@ -1,0 +1,91 @@
+
+xkb_keymap {
+//----------------------------------------------------------
+  xkb_keycodes { 
+    include "evdev+aliases(qwerty)"
+  };
+//----------------------------------------------------------
+  xkb_types { 
+    include "complete"
+  };
+//----------------------------------------------------------
+  xkb_compat {
+    include "complete"
+    interpret Overlay1_Enable {
+      action = SetControls(controls=overlay1);
+    };
+  };
+//----------------------------------------------------------   
+  xkb_symbols {
+    include "pc+us+ru:2+inet(evdev)"
+
+    key <AB11> { [ Shift_R ] };             // "\ -" (evdev code 97)
+    modifier_map Shift { <AB11> };
+    
+    key <AC12> { [ grave, asciitilde ] };   // "] }" (evdev code )
+    key <AE13> { [ backslash, bar ] };      // "yen |" (evdev code 132)
+    
+    key <MUHE> {                    // 102
+      type[Group1] = "ONE_LEVEL",
+      symbols[Group1] = [ Overlay1_Enable ]
+    };
+    key <HENK> {                    // 100
+      type[Group1] = "ONE_LEVEL",
+      symbols[Group1] = [ Overlay1_Enable ]
+    };
+    key <TLDE> { overlay1=<I222> }; // ~
+    key <AE01> { overlay1=<I222> }; // 1
+    key <AE02> { overlay1=<I222> }; // 2
+    key <AE03> { overlay1=<I222> }; // 3
+    key <AE04> { overlay1=<I222> }; // 4
+    key <AE05> { overlay1=<I222> }; // 5
+    key <AE06> { overlay1=<I222> }; // 6
+    key <AE07> { overlay1=<I222> }; // 7
+    key <AE08> { overlay1=<I222> }; // 8
+    key <AE09> { overlay1=<I222> }; // 9
+    key <AE10> { overlay1=<I222> }; // 0
+    key <AE11> { overlay1=<I222> }; // -
+    key <AE12> { overlay1=<I222> }; // =
+    key <AD01> { overlay1=<I222> }; // q
+    key <AD02> { overlay1=<I222> }; // w
+        key <AD03> { overlay1=<I249> }; // e
+        key <AD04> { overlay1=<I250> }; // r
+        key <I249> { [ ISO_First_Group ] };
+        key <I250> { [ ISO_Last_Group  ] };
+    key <AD05> { overlay1=<I222> }; // t
+    key <AD06> { overlay1=<I222> }; // y
+        key <AD07> { overlay1=<HOME> }; // u
+        key <AD08> { overlay1=<END>  }; // i
+    key <AD09> { overlay1=<I222> }; // o
+    key <AD10> { overlay1=<I222> }; // p
+    key <AD11> { overlay1=<I222> }; // [
+    key <AD12> { overlay1=<I222> }; // ]
+    key <AC01> { overlay1=<I222> }; // a
+    key <AC02> { overlay1=<I222> }; // s
+        key <AC03> { overlay1=<DELE> }; // d
+    key <AC04> { overlay1=<I222> }; // f
+    key <AC05> { overlay1=<I222> }; // g
+        key <AC06> { overlay1=<LEFT> }; // h
+        key <AC07> { overlay1=<DOWN> }; // j
+        key <AC08> { overlay1=<UP>   }; // k
+        key <AC09> { overlay1=<RGHT> }; // l
+    key <AC10> { overlay1=<I222> }; // ;
+    key <AC11> { overlay1=<I222> }; // '
+    key <AB01> { overlay1=<I222> }; // z
+    key <AB02> { overlay1=<I222> }; // x
+    key <AB03> { overlay1=<CAPS> }; // c
+    key <AB04> { overlay1=<I222> }; // v
+    key <AB05> { overlay1=<I222> }; // b
+    key <AB06> { overlay1=<I222> }; // n
+        key <AB07> { overlay1=<PGDN> }; // m
+        key <AB08> { overlay1=<PGUP> }; // ,
+    key <AB09> { overlay1=<I222> }; // .
+    key <AB10> { overlay1=<I222> }; // /
+    key <BKSL> { overlay1=<I222> }; // \
+    key <I222> { [ VoidSymbol ] };
+  };
+//----------------------------------------------------------
+  xkb_geometry {
+    include "pc(pc104)"
+  };
+};

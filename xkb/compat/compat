@@ -1,0 +1,7 @@
+
+partial 
+xkb_compatibility "dexp" {
+    interpret Overlay1_Enable+AnyOfOrNone(all) {
+        action= SetControls(controls=overlay1);
+    };
+};
